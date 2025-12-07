@@ -28,13 +28,44 @@
     <!-- HTML Code For Project -->
       <h1>Image Classifier (Teachable Machine)</h1>
       <p class="lead">This page uses our Teachable Machine image model to classify objects in real time using your webcam.</p>
-      <p>All you have to do is just click the button below to start your camera, and then hold one of the trained objects in front of the webcam to see the live prediction.</p>
+      <h2>How to Use Our Model</h2>
+<p>
+Our Teachable Machine classifier was trained to recognize three objects: 
+<strong>red scissors</strong>, a <strong>blue sticky note</strong>, and a 
+<strong>black spray bottle</strong>. To test the model, press the camera button, then enable your camera. Hold one of the objects in front of the camera and the model will return
+a prediction with confidence percentages.
+</p>
+<p>
+This model is intentionally low-risk and object-based to avoid ethical issues tied 
+to facial recognition and demographic classification. It focuses only on color 
+and shape patterns.
+</p>
 
       <button type="button" onclick="init()">Camera</button>
 
       <div id="webcam-container"></div>
       <div id="label-container"></div>
     </section>
+
+    
+    <div>
+      <section class="section">
+      <h3>How to Read the Confidence Percentages</h3>
+      <p>
+      When the model analyzes the camera image, it outputs a confidence percentage for each class. 
+      These numbers represent how certain the model is about its prediction. For example:
+      </p>
+      <ul>
+        <li><strong>“96% Red Scissors”</strong> means the model is very confident it sees the red scissors.</li>
+        <li>If no object is present, the model may still guess a class. This is normal because the model 
+            must pick the closest match based on patterns it was trained on.</li>
+      </ul>
+      <p>
+      Higher numbers = stronger confidence. Lower numbers = uncertainty or unclear input. This helps 
+      illustrate how computer vision systems operate and why model transparency matters.
+      </p>
+    </section>
+    </div>
     
     <!-- Code For Video Demo -->
 
@@ -51,6 +82,40 @@
       </div>
       <p>This short video demonstrates our Teachable Machine model classifying objects in real time.</p>
     </section>
+
+    
+<div>
+    <section class="section">
+<h3>How We Chose Our Dataset Size</h3>
+<p>
+We trained the model using around 60 images per object class. Teachable Machine recommends 
+30–100 images per class for a simple classifier, and we chose ~60 because it provided a 
+good balance between variety and training stability. Rather than collecting 60 different 
+objects, we captured many angles, distances, lighting conditions, and rotations of the same 
+object. This helps the model generalize better and avoids overfitting to a single pose.
+</p>
+<p>
+The goal wasn’t quantity for the sake of it, but diversity of how the objects appear to the 
+camera, which directly connects to Buolamwini’s point about dataset variation and avoiding 
+environmental bias.
+</p>
+<section>
+</div>
+
+<div>
+  <section class="section">
+  <h3>Model Limitations</h3>
+  <p>
+  Our model can only classify the specific training objects and does not understand broader 
+  categories (for example, it will not identify any random red item as “red scissors”). 
+  It may also produce confident guesses even when nothing is shown, which is a known behavior 
+  in simple classifiers. This helped us understand how bias and uncertainty show up in 
+  machine learning systems, even in low-risk contexts.
+  </p>
+</section>
+</div>
+
+
 
     <section class="section">
       <h2>Project Statement</h2>
