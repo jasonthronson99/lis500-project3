@@ -244,3 +244,39 @@ ul.links a:hover {
   color: #ff2626;
   text-decoration: underline;
 }
+
+/* === Prose Of Project Statement === */
+
+.prose {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: left;
+  line-height: 1.75;
+  padding: 1.5rem 1rem;
+}
+
+.prose p, .prose h2 {
+  text-align: left;
+}
+
+.prose p {
+  margin-bottom: 1.6rem;
+  text-indent: 2rem;
+}
+
+.prose img {
+  display: block;
+  margin: 1.25rem auto;
+  max-width: 100%;
+  height: auto;
+}
+
+/* === Extra Edits === */
+
+p {
+  letter-spacing: 0.01em;
+}
+
+h2 {
+  letter-spacing: 0.03em;
+}
